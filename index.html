@@ -1,0 +1,1049 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>错一题往里插一支笔 | 错一题往里插一支笔 - 学习挑战,趣味自律的影视新玩法</title>
+<meta name="description" content="错一题往里插一支笔，一档以学习挑战与趣味自律为主题的视频品牌，记录每一次答题失误的快乐瞬间，打造真实、有活力的社区内容。">
+<style>
+  :root{
+    --ink:#141414;
+    --ink-soft:#3a3a3a;
+    --paper:#f7f3ec;
+    --paper-2:#efe7da;
+    --accent:#e8452c;
+    --accent-2:#f6b93b;
+    --accent-3:#2f7d6d;
+    --line:#d8cec0;
+    --white:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.7;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  ::selection{background:var(--accent);color:#fff;}
+
+  .wrap{width:min(1180px,92vw);margin:0 auto;}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    background:var(--ink);
+    color:var(--paper);
+    font-size:13px;
+    letter-spacing:.04em;
+  }
+  .topbar .wrap{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:9px 0;gap:16px;flex-wrap:wrap;
+  }
+  .topbar .ticker{display:flex;align-items:center;gap:10px;overflow:hidden;white-space:nowrap;}
+  .topbar .dot{width:7px;height:7px;border-radius:50%;background:var(--accent-2);flex:none;animation:pulse 1.8s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.25;}}
+  .topbar nav{display:flex;gap:18px;}
+  .topbar nav a{opacity:.78;transition:opacity .2s;}
+  .topbar nav a:hover{opacity:1;color:var(--accent-2);}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:60;
+    background:rgba(247,243,236,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .navbar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 0;gap:24px;
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand .mark{
+    width:46px;height:46px;border-radius:13px;
+    background:linear-gradient(140deg,var(--accent),#f97016);
+    display:grid;place-items:center;flex:none;
+    box-shadow:0 8px 18px -8px rgba(232,69,44,.8);
+  }
+  .brand .mark svg{width:26px;height:26px;}
+  .brand .txt strong{display:block;font-size:17px;letter-spacing:.02em;}
+  .brand .txt span{display:block;font-size:11px;letter-spacing:.28em;color:var(--ink-soft);text-transform:uppercase;}
+  .menu{display:flex;gap:26px;font-size:15px;font-weight:500;}
+  .menu a{position:relative;padding:4px 0;}
+  .menu a::after{
+    content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;
+    background:var(--accent);transition:width .25s;
+  }
+  .menu a:hover::after{width:100%;}
+  .cta-btn{
+    background:var(--ink);color:var(--paper);
+    padding:11px 22px;border-radius:999px;font-size:14px;font-weight:600;
+    display:inline-flex;align-items:center;gap:8px;
+    transition:transform .2s,background .2s;
+  }
+  .cta-btn:hover{background:var(--accent);transform:translateY(-2px);}
+  .burger{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;transition:.3s;}
+  .mobile-menu{display:none;flex-direction:column;gap:2px;padding:8px 0 18px;}
+  .mobile-menu a{padding:12px 4px;border-bottom:1px dashed var(--line);font-weight:500;}
+  .mobile-menu.open{display:flex;}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;padding:70px 0 84px;overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(600px 320px at 82% 14%,rgba(246,185,59,.28),transparent 70%),
+      radial-gradient(520px 340px at 8% 82%,rgba(47,125,109,.16),transparent 70%);
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;
+    position:relative;
+  }
+  .kicker{
+    display:inline-flex;align-items:center;gap:9px;
+    background:var(--white);border:1px solid var(--line);
+    border-radius:999px;padding:7px 16px;font-size:12.5px;font-weight:600;
+    letter-spacing:.06em;color:var(--accent);
+    box-shadow:0 4px 14px -10px rgba(0,0,0,.4);
+  }
+  .kicker .blink{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 1.4s infinite;}
+  h1{
+    font-size:clamp(38px,6vw,68px);
+    line-height:1.08;letter-spacing:-.02em;
+    margin:20px 0 18px;font-weight:800;
+  }
+  h1 em{
+    font-style:normal;color:var(--accent);
+    position:relative;white-space:nowrap;
+  }
+  h1 em::after{
+    content:"";position:absolute;left:0;right:0;bottom:6px;height:10px;
+    background:rgba(246,185,59,.55);z-index:-1;border-radius:3px;
+  }
+  .lede{font-size:17px;color:var(--ink-soft);max-width:520px;}
+  .hero-actions{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--accent);color:#fff;padding:14px 28px;border-radius:999px;
+    font-weight:700;font-size:15px;display:inline-flex;align-items:center;gap:9px;
+    box-shadow:0 14px 28px -16px rgba(232,69,44,.95);
+    transition:transform .2s,box-shadow .2s;
+  }
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 34px -14px rgba(232,69,44,.9);}
+  .btn-ghost{
+    border:1.5px solid var(--ink);padding:13px 26px;border-radius:999px;
+    font-weight:600;font-size:15px;transition:background .2s,color .2s;
+  }
+  .btn-ghost:hover{background:var(--ink);color:var(--paper);}
+  .hero-stats{display:flex;gap:36px;margin-top:42px;flex-wrap:wrap;}
+  .hero-stats .s strong{font-size:30px;font-weight:800;letter-spacing:-.02em;display:block;line-height:1.15;}
+  .hero-stats .s span{font-size:12.5px;color:var(--ink-soft);letter-spacing:.05em;}
+
+  /* hero visual */
+  .hero-art{position:relative;}
+  .stage{
+    background:linear-gradient(160deg,#201f1d,#33302b);
+    border-radius:26px;padding:26px;
+    box-shadow:0 40px 70px -40px rgba(0,0,0,.7);
+    position:relative;overflow:hidden;
+  }
+  .stage::after{
+    content:"";position:absolute;width:280px;height:280px;border-radius:50%;
+    background:radial-gradient(circle,rgba(246,185,59,.35),transparent 65%);
+    top:-90px;right:-90px;
+  }
+  .stage-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;position:relative;z-index:2;}
+  .rec{display:flex;align-items:center;gap:8px;color:#ff6b57;font-size:12px;font-weight:700;letter-spacing:.14em;}
+  .rec i{width:9px;height:9px;border-radius:50%;background:#ff6b57;animation:pulse 1s infinite;}
+  .stage-head .tag{font-size:11px;color:#cfc6b8;letter-spacing:.14em;}
+  .screen{
+    background:#0f0f0e;border-radius:16px;overflow:hidden;position:relative;z-index:2;
+    border:1px solid #3d3a34;
+  }
+  .screen svg{width:100%;height:auto;display:block;}
+  .playbar{
+    display:flex;align-items:center;gap:12px;padding:12px 14px;background:#181715;
+    border-top:1px solid #2c2a26;
+  }
+  .playbtn{
+    width:32px;height:32px;border-radius:50%;background:var(--accent);
+    display:grid;place-items:center;flex:none;cursor:pointer;border:none;
+  }
+  .playbtn svg{width:13px;height:13px;}
+  .progress{flex:1;height:5px;border-radius:99px;background:#3a3733;overflow:hidden;}
+  .progress i{display:block;height:100%;width:42%;background:var(--accent-2);border-radius:99px;transition:width .4s linear;}
+  .playbar .time{font-size:11px;color:#b9b1a4;letter-spacing:.06em;flex:none;}
+  .float-card{
+    position:absolute;background:var(--white);border-radius:16px;padding:14px 18px;
+    box-shadow:0 22px 40px -24px rgba(0,0,0,.5);border:1px solid var(--line);
+  }
+  .float-card.a{left:-26px;bottom:64px;animation:bob 5s ease-in-out infinite;}
+  .float-card.b{right:-20px;top:34px;animation:bob 6s ease-in-out infinite reverse;}
+  @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+  .float-card .n{font-size:22px;font-weight:800;color:var(--accent);line-height:1.2;}
+  .float-card .l{font-size:11.5px;color:var(--ink-soft);letter-spacing:.05em;}
+
+  /* ---------- marquee ---------- */
+  .marquee{
+    background:var(--ink);color:var(--paper);
+    overflow:hidden;padding:15px 0;border-block:1px solid #000;
+  }
+  .marquee-track{display:flex;gap:44px;white-space:nowrap;width:max-content;animation:slide 34s linear infinite;}
+  .marquee-track span{font-size:14px;letter-spacing:.16em;display:flex;align-items:center;gap:44px;opacity:.85;}
+  .marquee-track span::after{content:"✦";color:var(--accent-2);font-size:13px;}
+  @keyframes slide{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+  /* ---------- sections common ---------- */
+  section{padding:88px 0;}
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:46px;flex-wrap:wrap;}
+  .sec-head .tag{font-size:12px;font-weight:700;letter-spacing:.24em;color:var(--accent);margin-bottom:12px;}
+  .sec-head h2{font-size:clamp(26px,3.6vw,40px);letter-spacing:-.01em;line-height:1.2;font-weight:800;}
+  .sec-head p{max-width:430px;color:var(--ink-soft);font-size:15px;}
+
+  /* ---------- episodes ---------- */
+  .eps{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:26px;}
+  .ep{
+    background:var(--white);border-radius:20px;overflow:hidden;border:1px solid var(--line);
+    transition:transform .28s,box-shadow .28s;
+  }
+  .ep:hover{transform:translateY(-6px);box-shadow:0 26px 44px -30px rgba(0,0,0,.45);}
+  .ep .thumb{position:relative;aspect-ratio:16/10;overflow:hidden;background:#22201d;}
+  .ep .thumb svg{width:100%;height:100%;}
+  .ep .dur{
+    position:absolute;right:12px;bottom:12px;background:rgba(0,0,0,.78);color:#fff;
+    font-size:11.5px;padding:3px 9px;border-radius:6px;letter-spacing:.06em;
+  }
+  .ep .play-hint{
+    position:absolute;inset:0;display:grid;place-items:center;opacity:0;
+    transition:opacity .28s;background:rgba(0,0,0,.28);
+  }
+  .ep:hover .play-hint{opacity:1;}
+  .ep .play-hint i{
+    width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.94);
+    display:grid;place-items:center;box-shadow:0 10px 24px -8px rgba(0,0,0,.6);
+  }
+  .ep .body{padding:20px 22px 24px;}
+  .ep .meta{display:flex;gap:10px;font-size:11.5px;letter-spacing:.08em;color:var(--accent-3);font-weight:700;margin-bottom:9px;}
+  .ep h3{font-size:17.5px;line-height:1.42;font-weight:700;margin-bottom:10px;}
+  .ep p{font-size:13.5px;color:var(--ink-soft);}
+  .ep .foot{display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-size:12px;color:#8a8073;border-top:1px dashed var(--line);padding-top:14px;}
+
+  /* ---------- format / columns ---------- */
+  .formats{background:var(--paper-2);border-block:1px solid var(--line);}
+  .format-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+  .fmt{
+    background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:28px 24px 30px;
+    transition:transform .25s,border-color .25s;
+    position:relative;overflow:hidden;
+  }
+  .fmt:hover{transform:translateY(-5px);border-color:var(--accent);}
+  .fmt .ic{
+    width:50px;height:50px;border-radius:14px;display:grid;place-items:center;margin-bottom:20px;
+    background:var(--ink);color:var(--accent-2);
+  }
+  .fmt .ic svg{width:24px;height:24px;}
+  .fmt h3{font-size:17px;margin-bottom:9px;font-weight:700;}
+  .fmt p{font-size:13.5px;color:var(--ink-soft);}
+  .fmt .idx{
+    position:absolute;right:18px;top:12px;font-size:44px;font-weight:900;
+    color:rgba(20,20,20,.05);letter-spacing:-.04em;line-height:1;
+  }
+
+  /* ---------- community ---------- */
+  .comm-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:start;}
+  .wall{
+    background:var(--white);border:1px solid var(--line);border-radius:22px;padding:12px;
+    display:grid;grid-template-columns:1fr 1fr;gap:12px;
+  }
+  .post{
+    background:var(--paper);border-radius:14px;padding:18px;border:1px solid #e6ddcf;
+    transition:background .2s;
+  }
+  .post:hover{background:var(--paper-2);}
+  .post .who{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+  .avatar{
+    width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
+    font-size:13px;font-weight:800;color:#fff;flex:none;
+  }
+  .post .who b{font-size:13px;display:block;line-height:1.3;}
+  .post .who small{font-size:10.5px;color:#8a8073;}
+  .post p{font-size:13px;color:var(--ink-soft);line-height:1.62;}
+  .post .likes{margin-top:10px;font-size:11.5px;color:var(--accent);font-weight:700;}
+  .join-card{
+    background:var(--ink);color:var(--paper);border-radius:22px;padding:34px 30px;
+    position:relative;overflow:hidden;
+  }
+  .join-card::before{
+    content:"";position:absolute;width:220px;height:220px;border-radius:50%;
+    background:radial-gradient(circle,rgba(232,69,44,.55),transparent 70%);
+    right:-70px;bottom:-90px;
+  }
+  .join-card h3{font-size:23px;margin-bottom:12px;line-height:1.34;position:relative;}
+  .join-card p{font-size:13.5px;opacity:.78;margin-bottom:22px;position:relative;}
+  .join-card .rows{display:flex;flex-direction:column;gap:12px;position:relative;}
+  .join-card .row{display:flex;justify-content:space-between;font-size:13px;border-bottom:1px dashed rgba(255,255,255,.18);padding-bottom:11px;}
+  .join-card .row b{color:var(--accent-2);}
+  .join-card .cta-btn{margin-top:24px;background:var(--accent);position:relative;}
+  .join-card .cta-btn:hover{background:var(--accent-2);color:var(--ink);}
+
+  /* ---------- quote ---------- */
+  .quote-band{
+    background:var(--accent);color:#fff;padding:64px 0;position:relative;overflow:hidden;
+  }
+  .quote-band::after{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(500px 260px at 88% 20%,rgba(255,255,255,.2),transparent 70%);
+  }
+  .quote-band blockquote{
+    font-size:clamp(21px,3vw,32px);font-weight:800;line-height:1.42;max-width:900px;
+    letter-spacing:-.01em;position:relative;
+  }
+  .quote-band cite{display:block;margin-top:18px;font-size:13px;font-style:normal;letter-spacing:.14em;opacity:.85;}
+
+  /* ---------- about ---------- */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  .about-text h2{font-size:clamp(26px,3.6vw,38px);line-height:1.22;margin-bottom:20px;letter-spacing:-.01em;}
+  .about-text p{font-size:15px;color:var(--ink-soft);margin-bottom:15px;}
+  .about-text .nums{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:30px;}
+  .about-text .nums div{border-left:3px solid var(--accent);padding-left:14px;}
+  .about-text .nums strong{display:block;font-size:26px;font-weight:800;letter-spacing:-.02em;}
+  .about-text .nums span{font-size:12px;color:var(--ink-soft);letter-spacing:.05em;}
+  .about-art{position:relative;}
+  .about-art .frame{
+    border-radius:22px;overflow:hidden;border:1px solid var(--line);
+    box-shadow:0 30px 60px -40px rgba(0,0,0,.5);background:var(--white);
+  }
+  .about-art .badge{
+    position:absolute;right:-14px;bottom:-18px;background:var(--accent-2);color:var(--ink);
+    border-radius:14px;padding:14px 18px;font-weight:800;font-size:13px;line-height:1.35;
+    box-shadow:0 16px 30px -18px rgba(0,0,0,.55);
+  }
+
+  /* ---------- faq ---------- */
+  .faq{background:var(--paper-2);border-top:1px solid var(--line);}
+  .faq-list{max-width:860px;margin:0 auto;}
+  .qa{border-bottom:1px solid var(--line);}
+  .qa button{
+    width:100%;background:none;border:none;text-align:left;cursor:pointer;
+    padding:22px 4px;font-size:16.5px;font-weight:700;font-family:inherit;color:var(--ink);
+    display:flex;justify-content:space-between;align-items:center;gap:20px;
+  }
+  .qa button i{
+    flex:none;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--ink);
+    display:grid;place-items:center;font-style:normal;font-size:15px;transition:transform .3s,background .3s,color .3s;
+  }
+  .qa.open button i{transform:rotate(45deg);background:var(--accent);border-color:var(--accent);color:#fff;}
+  .qa .ans{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+  .qa .ans p{font-size:14.5px;color:var(--ink-soft);padding:0 4px 22px;max-width:92%;}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--ink);color:#c9c2b6;padding:70px 0 0;}
+  .fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:40px;padding-bottom:52px;}
+  .fbrand{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+  .fbrand .mark{
+    width:42px;height:42px;border-radius:12px;background:linear-gradient(140deg,var(--accent),#f97016);
+    display:grid;place-items:center;flex:none;
+  }
+  .fbrand .mark svg{width:23px;height:23px;}
+  .fbrand strong{color:#fff;font-size:16px;display:block;}
+  .fbrand span{font-size:10.5px;letter-spacing:.22em;}
+  footer p{font-size:13px;line-height:1.8;opacity:.72;max-width:290px;}
+  footer h4{color:#fff;font-size:13px;letter-spacing:.16em;margin-bottom:16px;font-weight:700;}
+  footer ul{list-style:none;display:flex;flex-direction:column;gap:11px;}
+  footer ul a{font-size:13.5px;opacity:.72;transition:opacity .2s,color .2s;}
+  footer ul a:hover{opacity:1;color:var(--accent-2);}
+  .newsletter{display:flex;margin-top:10px;background:#232220;border-radius:10px;overflow:hidden;border:1px solid #35332f;}
+  .newsletter input{
+    flex:1;background:none;border:none;padding:12px 14px;color:#fff;font-size:13px;outline:none;font-family:inherit;
+  }
+  .newsletter input::placeholder{color:#7d7669;}
+  .newsletter button{
+    background:var(--accent);border:none;color:#fff;padding:0 18px;cursor:pointer;font-size:13px;font-weight:700;font-family:inherit;
+  }
+  .newsletter button:hover{background:var(--accent-2);color:var(--ink);}
+  .fbar{border-top:1px solid #2b2925;padding:22px 0;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;opacity:.6;}
+  .fbar .socials{display:flex;gap:16px;}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:1000px){
+    .format-grid{grid-template-columns:1fr 1fr;}
+    .comm-grid{grid-template-columns:1fr;}
+    .about-grid{grid-template-columns:1fr;gap:40px;}
+  }
+  @media(max-width:860px){
+    .hero-grid{grid-template-columns:1fr;gap:44px;}
+    .menu{display:none;}
+    .burger{display:block;}
+    .navbar .cta-btn{display:none;}
+    .fgrid{grid-template-columns:1fr 1fr;}
+  }
+  @media(max-width:640px){
+    section{padding:64px 0;}
+    .format-grid{grid-template-columns:1fr;}
+    .wall{grid-template-columns:1fr;}
+    .float-card.a{left:-10px;bottom:-24px;}
+    .float-card.b{right:-8px;top:-18px;display:none;}
+    .hero-stats{gap:26px;}
+    .fgrid{grid-template-columns:1fr;gap:32px;}
+    .topbar nav{display:none;}
+  }
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- topbar -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="ticker">
+      <span class="dot"></span>
+      <span>正在直播 · 第 37 期答题现场：答错即入笔，铁盒已经快装不下了</span>
+    </div>
+    <nav>
+      <a href="#episodes">最新一期</a>
+      <a href="#community">社区</a>
+      <a href="#faq">常见问题</a>
+      <a href="#join">加入我们</a>
+    </nav>
+  </div>
+</div>
+
+<!-- header -->
+<header>
+  <div class="wrap">
+    <div class="navbar">
+      <a class="brand" href="#top">
+        <div class="mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 20l7-7"/><path d="M14 4l6 6-3.5 3.5-6-6z"/>
+            <path d="M4 20l1.5-4.5L13 8"/>
+          </svg>
+        </div>
+        <div class="txt">
+          <strong>错一题往里插一支笔</strong>
+          <span>Pen Per Wrong Answer</span>
+        </div>
+      </a>
+      <nav class="menu">
+        <a href="#episodes">节目</a>
+        <a href="#formats">栏目</a>
+        <a href="#community">社区</a>
+        <a href="#about">关于我们</a>
+        <a href="#faq">问答</a>
+      </nav>
+      <a class="cta-btn" href="#join">参与报名 →</a>
+      <button class="burger" aria-label="展开菜单" onclick="document.getElementById('mmenu').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mmenu">
+      <a href="#episodes">节目</a>
+      <a href="#formats">栏目</a>
+      <a href="#community">社区</a>
+      <a href="#about">关于我们</a>
+      <a href="#faq">问答</a>
+      <a href="#join">参与报名 →</a>
+    </div>
+  </div>
+</header>
+
+<!-- hero -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker"><i class="blink"></i> 一档把「答错」变成快乐的视频节目</span>
+      <h1>错一题<br>往里<em>插一支笔</em></h1>
+      <p class="lede">
+        答题、翻车、再答题。我们用镜头记录每一次失误的重量——
+        每错一题，就往笔筒里插一支笔。当笔筒塞满的那一刻，你会发现，
+        错误其实也有它的形状。
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#episodes">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+          观看最新一期
+        </a>
+        <a class="btn-ghost" href="#join">报名上节目</a>
+      </div>
+      <div class="hero-stats">
+        <div class="s"><strong>1,240+</strong><span>期已更新</span></div>
+        <div class="s"><strong>860 万</strong><span>累计播放</span></div>
+        <div class="s"><strong>37,000</strong><span>社区投稿</span></div>
+        <div class="s"><strong>96%</strong><span>回归挑战率</span></div>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <div class="stage">
+        <div class="stage-head">
+          <div class="rec"><i></i> REC</div>
+          <div class="tag">STUDIO 04 · CAM A</div>
+        </div>
+        <div class="screen">
+          <svg viewBox="0 0 480 280" role="img" aria-label="答题现场画面">
+            <defs>
+              <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#262421"/><stop offset="1" stop-color="#141312"/>
+              </linearGradient>
+              <linearGradient id="pen" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#f6b93b"/><stop offset="1" stop-color="#e8452c"/>
+              </linearGradient>
+            </defs>
+            <rect width="480" height="280" fill="url(#bg1)"/>
+            <g opacity=".18">
+              <path d="M0 210 L480 150" stroke="#f6b93b" stroke-width="1"/>
+              <path d="M0 250 L480 190" stroke="#f6b93b" stroke-width="1"/>
+            </g>
+            <!-- desk -->
+            <rect x="0" y="212" width="480" height="68" fill="#1b1917"/>
+            <rect x="0" y="212" width="480" height="3" fill="#3a3530"/>
+            <!-- pen holder -->
+            <g transform="translate(322,120)">
+              <path d="M0 0 h64 l-7 92 h-50 z" fill="#2f2b27" stroke="#4a443d" stroke-width="2"/>
+              <g stroke-linecap="round">
+                <line x1="12" y1="0" x2="10" y2="-44" stroke="url(#pen)" stroke-width="6"/>
+                <line x1="24" y1="0" x2="22" y2="-58" stroke="url(#pen)" stroke-width="6"/>
+                <line x1="36" y1="0" x2="35" y2="-38" stroke="url(#pen)" stroke-width="6"/>
+                <line x1="48" y1="0" x2="50" y2="-52" stroke="url(#pen)" stroke-width="6"/>
+                <line x1="18" y1="0" x2="16" y2="-24" stroke="#e8452c" stroke-width="5"/>
+                <line x1="42" y1="0" x2="44" y2="-20" stroke="#f6b93b" stroke-width="5"/>
+              </g>
+            </g>
+            <!-- character -->
+            <g transform="translate(120,64)">
+              <circle cx="60" cy="46" r="34" fill="#e8b98f"/>
+              <path d="M26 40c0-22 15-34 34-34s34 12 34 34c-8-12-20-16-34-16s-26 4-34 16z" fill="#2b2723"/>
+              <circle cx="48" cy="46" r="3.4" fill="#2b2723"/>
+              <circle cx="72" cy="46" r="3.4" fill="#2b2723"/>
+              <path d="M50 60q10 8 20 0" stroke="#2b2723" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <rect x="30" y="86" width="60" height="66" rx="18" fill="#3f6f62"/>
+              <rect x="46" y="152" width="28" height="46" rx="10" fill="#2b2723"/>
+            </g>
+            <!-- question board -->
+            <g transform="translate(28,26)">
+              <rect width="180" height="86" rx="10" fill="#f7f3ec"/>
+              <rect x="14" y="16" width="120" height="8" rx="4" fill="#d8cec0"/>
+              <rect x="14" y="34" width="150" height="8" rx="4" fill="#d8cec0"/>
+              <rect x="14" y="54" width="52" height="20" rx="5" fill="#e8452c"/>
+              <rect x="78" y="54" width="52" height="20" rx="5" fill="#d8cec0"/>
+            </g>
+            <!-- floating marks -->
+            <g fill="#e8452c" opacity=".9">
+              <path d="M250 60 l7 14 15 2 -11 10 3 15 -14 -7 -14 7 3 -15 -11 -10 15 -2z" transform="scale(.8) translate(60,0)"/>
+            </g>
+            <text x="240" y="258" font-size="11" fill="#7d7669" font-family="monospace">ERRORS · 12</text>
+          </svg>
+        </div>
+        <div class="playbar">
+          <button class="playbtn" aria-label="播放">
+            <svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <div class="progress"><i id="bar"></i></div>
+          <div class="time">03:42 / 08:56</div>
+        </div>
+      </div>
+      <div class="float-card a">
+        <div class="n">+12</div>
+        <div class="l">本期插笔数</div>
+      </div>
+      <div class="float-card b">
+        <div class="n">S4</div>
+        <div class="l">第四季热播中</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- marquee -->
+<div class="marquee">
+  <div class="marquee-track" id="mtrack">
+    <span>答题挑战</span><span>趣味自律</span><span>真实记录</span><span>社区共创</span>
+    <span>每周四更新</span><span>错题也是礼物</span><span>把失误摆上台面</span><span>一起玩</span>
+  </div>
+</div>
+
+<!-- episodes -->
+<section id="episodes">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="tag">LATEST EPISODES</div>
+        <h2>最新上线的四期节目</h2>
+      </div>
+      <p>每一期都是一场关于「会不会」的现场实验。镜头不剪辑答案，只记录笔筒里逐渐增高的那部分。</p>
+    </div>
+
+    <div class="eps">
+      <article class="ep reveal">
+        <div class="thumb">
+          <svg viewBox="0 0 400 250" role="img" aria-label="节目封面一">
+            <defs><linearGradient id="e1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2b2723"/><stop offset="1" stop-color="#443d34"/></linearGradient></defs>
+            <rect width="400" height="250" fill="url(#e1)"/>
+            <circle cx="300" cy="70" r="70" fill="#e8452c" opacity=".28"/>
+            <g transform="translate(52,58)">
+              <rect width="170" height="112" rx="10" fill="#f7f3ec"/>
+              <rect x="16" y="18" width="100" height="9" rx="4" fill="#d8cec0"/>
+              <rect x="16" y="38" width="134" height="9" rx="4" fill="#d8cec0"/>
+              <rect x="16" y="62" width="60" height="30" rx="6" fill="#e8452c"/>
+              <rect x="88" y="62" width="60" height="30" rx="6" fill="#eae1d3"/>
+            </g>
+            <g fill="#f6b93b"><rect x="270" y="150" width="8" height="56" rx="4"/><rect x="288" y="132" width="8" height="74" rx="4"/><rect x="306" y="162" width="8" height="44" rx="4"/></g>
+          </svg>
+          <span class="dur">08:56</span>
+          <span class="play-hint"><i><svg width="18" height="18" viewBox="0 0 24 24" fill="#e8452c"><path d="M8 5v14l11-7z"/></svg></i></span>
+        </div>
+        <div class="body">
+          <div class="meta"><span>第37期</span><span>·</span><span>常识挑战</span></div>
+          <h3>连错六题之后，笔筒第一次发出了声音</h3>
+          <p>三位素人嘉宾、一组跨领域常识题，以及一个会在第 6 支笔时「抗议」的木质笔筒。</p>
+          <div class="foot"><span>播放 42.6 万</span><span>2025-03-13</span></div>
+        </div>
+      </article>
+
+      <article class="ep reveal">
+        <div class="thumb">
+          <svg viewBox="0 0 400 250" role="img" aria-label="节目封面二">
+            <defs><linearGradient id="e2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1e2b28"/><stop offset="1" stop-color="#344e48"/></linearGradient></defs>
+            <rect width="400" height="250" fill="url(#e2)"/>
+            <circle cx="90" cy="190" r="80" fill="#2f7d6d" opacity=".4"/>
+            <g transform="translate(120,50)">
+              <circle cx="80" cy="42" r="30" fill="#e8b98f"/>
+              <path d="M50 38c0-20 14-30 30-30s30 10 30 30c-7-10-18-14-30-14s-23 4-30 14z" fill="#1f1c19"/>
+              <rect x="52" y="76" width="56" height="70" rx="16" fill="#f7f3ec"/>
+              <rect x="66" y="146" width="28" height="44" rx="10" fill="#1f1c19"/>
+            </g>
+            <g stroke="#f6b93b" stroke-width="5" stroke-linecap="round"><line x1="304" y1="176" x2="304" y2="122"/><line x1="322" y1="176" x2="322" y2="100"/><line x1="340" y1="176" x2="340" y2="136"/></g>
+          </svg>
+          <span class="dur">11:20</span>
+          <span class="play-hint"><i><svg width="18" height="18" viewBox="0 0 24 24" fill="#e8452c"><path d="M8 5v14l11-7z"/></svg></i></span>
+        </div>
+        <div class="body">
+          <div class="meta"><span>第36期</span><span>·</span><span>校园专场</span></div>
+          <h3>大学生返场：这次他们带了自己的笔筒</h3>
+          <p>上一季最「能错」的三位同学回来了，带着定制笔筒和新一轮的倔强。</p>
+          <div class="foot"><span>播放 68.1 万</span><span>2025-03-06</span></div>
+        </div>
+      </article>
+
+      <article class="ep reveal">
+        <div class="thumb">
+          <svg viewBox="0 0 400 250" role="img" aria-label="节目封面三">
+            <defs><linearGradient id="e3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2e2216"/><stop offset="1" stop-color="#4a3520"/></linearGradient></defs>
+            <rect width="400" height="250" fill="url(#e3)"/>
+            <circle cx="330" cy="200" r="90" fill="#f6b93b" opacity=".28"/>
+            <g transform="translate(40,64)">
+              <rect width="150" height="104" rx="10" fill="#f7f3ec"/>
+              <rect x="14" y="16" width="90" height="8" rx="4" fill="#d8cec0"/>
+              <rect x="14" y="34" width="120" height="8" rx="4" fill="#d8cec0"/>
+              <rect x="14" y="58" width="54" height="26" rx="6" fill="#f6b93b"/>
+              <rect x="76" y="58" width="54" height="26" rx="6" fill="#eae1d3"/>
+            </g>
+            <g transform="translate(230,60)">
+              <path d="M0 60 q40 -70 80 0 q40 70 0 110 q-40 30 -80 0 z" fill="#e8452c" opacity=".85"/>
+              <text x="26" y="112" font-size="34" font-weight="800" fill="#fff" font-family="sans-serif">?</text>
+            </g>
+          </svg>
+          <span class="dur">07:48</span>
+          <span class="play-hint"><i><svg width="18" height="18" viewBox="0 0 24 24" fill="#e8452c"><path d="M8 5v14l11-7z"/></svg></i></span>
+        </div>
+        <div class="body">
+          <div class="meta"><span>第35期</span><span>·</span><span>冷知识</span></div>
+          <h3>关于「笔」的 20 个冷知识，全对算你厉害</h3>
+          <p>这一次的题目全部围绕笔本身。当题目和道具重合，现场一度陷入沉默。</p>
+          <div class="foot"><span>播放 51.7 万</span><span>2025-02-27</span></div>
+        </div>
+      </article>
+
+      <article class="ep reveal">
+        <div class="thumb">
+          <svg viewBox="0 0 400 250" role="img" aria-label="节目封面四">
+            <defs><linearGradient id="e4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#23202a"/><stop offset="1" stop-color="#3b3548"/></linearGradient></defs>
+            <rect width="400" height="250" fill="url(#e4)"/>
+            <circle cx="70" cy="60" r="80" fill="#6c5ce7" opacity=".35"/>
+            <g transform="translate(110,46)">
+              <rect x="0" y="0" width="180" height="120" rx="12" fill="#0f0e12" stroke="#4b4558" stroke-width="2"/>
+              <rect x="18" y="20" width="70" height="8" rx="4" fill="#4b4558"/>
+              <rect x="18" y="38" width="110" height="8" rx="4" fill="#4b4558"/>
+              <rect x="18" y="56" width="144" height="8" rx="4" fill="#4b4558"/>
+              <rect x="18" y="80" width="44" height="24" rx="6" fill="#e8452c"/>
+            </g>
+            <g stroke="#f6b93b" stroke-width="5" stroke-linecap="round"><line x1="96" y1="214" x2="96" y2="168"/><line x1="116" y1="214" x2="116" y2="150"/><line x1="136" y1="214" x2="136" y2="182"/></g>
+          </svg>
+          <span class="dur">09:33</span>
+          <span class="play-hint"><i><svg width="18" height="18" viewBox="0 0 24 24" fill="#e8452c"><path d="M8 5v14l11-7z"/></svg></i></span>
+        </div>
+        <div class="body">
+          <div class="meta"><span>第34期</span><span>·</span><span>夜场特辑</span></div>
+          <h3>凌晨两点的答题现场，人的判断会变钝吗</h3>
+          <p>一场关于「时间与判断力」的实验，用一支支落下的笔记录专注的衰减曲线。</p>
+          <div class="foot"><span>播放 39.4 万</span><span>2025-02-20</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- formats -->
+<section class="formats" id="formats">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="tag">OUR FORMATS</div>
+        <h2>四种形态，同一套规则</h2>
+      </div>
+      <p>规则很简单：答错，插笔。形式可以变，诚恳不能变。我们围绕这条规则延展出四种栏目。</p>
+    </div>
+    <div class="format-grid">
+      <div class="fmt reveal">
+        <span class="idx">01</span>
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 22l4-4 4 4"/>
+          </svg>
+        </div>
+        <h3>现场答题</h3>
+        <p>最经典的演播室形态。嘉宾在无提示状态下连续答题，笔一支一支地插进笔筒。</p>
+      </div>
+      <div class="fmt reveal">
+        <span class="idx">02</span>
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3l2.5 6 6.5.5-5 4.3 1.6 6.2L12 16.8 6.4 20l1.6-6.2-5-4.3 6.5-.5z"/>
+          </svg>
+        </div>
+        <h3>社区翻车合集</h3>
+        <p>观众投稿自己的「答错瞬间」，由剪辑组做成每周一期的合辑，真实得让人心疼。</p>
+      </div>
+      <div class="fmt reveal">
+        <span class="idx">03</span>
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>
+          </svg>
+        </div>
+        <h3>48 小时不NG</h3>
+        <p>长时间挑战企划。嘉宾在两天内不间断作答，笔筒满溢的那一刻才算结束。</p>
+      </div>
+      <div class="fmt reveal">
+        <span class="idx">04</span>
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19V5a2 2 0 012-2h9l5 5v11a2 2 0 01-2 2H6a2 2 0 01-2-2z"/><path d="M14 3v6h6"/>
+          </svg>
+        </div>
+        <h3>错题复盘室</h3>
+        <p>偏社论与访谈的栏目。我们把错得最漂亮的题拿出来，请人聊聊为什么会错。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- community -->
+<section id="community">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="tag">COMMUNITY</div>
+        <h2>社区里的人正在犯错</h2>
+      </div>
+      <p>每周有上千条投稿涌进后台。这些密密麻麻的文字，是我们继续做下去的理由。</p>
+    </div>
+    <div class="comm-grid">
+      <div class="wall reveal">
+        <div class="post">
+          <div class="who">
+            <div class="avatar" style="background:#e8452c">林</div>
+            <div><b>林小满</b><small>投稿 12 次 · 社区活跃</small></div>
+          </div>
+          <p>我把这道地理题答错了三次，笔筒里现在有三支同款黑笔。它们排在一起很像一个笑话，但我知道那是我的进步。</p>
+          <div class="likes">♥ 2,140</div>
+        </div>
+        <div class="post">
+          <div class="who">
+            <div class="avatar" style="background:#2f7d6d">阿</div>
+            <div><b>阿野不野</b><small>投稿 7 次</small></div>
+          </div>
+          <p>看这档节目最大的收获不是学会答题，而是学会承认「我不知道」。这句话说出来其实挺轻松的。</p>
+          <div class="likes">♥ 1,872</div>
+        </div>
+        <div class="post">
+          <div class="who">
+            <div class="avatar" style="background:#f6b93b">周</div>
+            <div><b>周末不加班</b><small>投稿 23 次</small></div>
+          </div>
+          <p>建议增加一个「全员零错」特别期，看看笔筒空着的时候，演播室到底有多安静。</p>
+          <div class="likes">♥ 3,061</div>
+        </div>
+        <div class="post">
+          <div class="who">
+            <div class="avatar" style="background:#5b5bd6">小</div>
+            <div><b>小鹿乱撞</b><small>投稿 4 次</small></div>
+          </div>
+          <p>我妈现在会跟我一起看，看到嘉宾连错她就在旁边着急，然后把正确答案大声念出来。</p>
+          <div class="likes">♥ 1,395</div>
+        </div>
+      </div>
+      <div class="join-card reveal" id="join">
+        <h3>报名成为下一位答题者</h3>
+        <p>不限年龄、不限职业、不需要准备。你只需要带上一颗愿意出错的心，笔我们提供。</p>
+        <div class="rows">
+          <div class="row"><span>录制地点</span><b>上海 · 徐汇演播室</b></div>
+          <div class="row"><span>单期时长</span><b>约 3 小时</b></div>
+          <div class="row"><span>是否需要经验</span><b>完全不需要</b></div>
+          <div class="row"><span>报名通道</span><b>本月剩余 8 个名额</b></div>
+        </div>
+        <a class="cta-btn" href="#contact">提交报名信息 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- quote band -->
+<div class="quote-band">
+  <div class="wrap">
+    <blockquote>「我们不是在做一档答题节目，我们是在给『不确定』一个体面的位置。」</blockquote>
+    <cite>—— 错一题往里插一支笔 · 制片人手记</cite>
+  </div>
+</div>
+
+<!-- about -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-text reveal">
+      <div class="tag" style="font-size:12px;font-weight:700;letter-spacing:.24em;color:var(--accent);margin-bottom:12px;">ABOUT US</div>
+      <h2>一个把「错」做成内容的视频品牌</h2>
+      <p>
+        「错一题往里插一支笔」成立于 2022 年，起初只是三个人在出租屋里拍的一段五分钟短片。
+        规则朴素得近乎笨拙：答错一道题，就往笔筒里插一支笔。
+      </p>
+      <p>
+        三年过去，这个动作变成了一种可以被理解的表达。笔筒是我们最忠实的道具，
+        它记录的不是无知，而是勇气。我们持续产出季播节目、社区合辑与线下特别场，
+        也持续邀请普通人走上镜头，把自己的不确定摊开来。
+      </p>
+      <p>
+        我们没有宏大的目标，只想让「答错」这件事，变得不那么难堪一点点。
+      </p>
+      <div class="nums">
+        <div><strong>2022</strong><span>品牌创立年份</span></div>
+        <div><strong>4 季</strong><span>已播出季数</span></div>
+        <div><strong>1,240+</strong><span>累计节目期数</span></div>
+        <div><strong>37,000</strong><span>社区有效投稿</span></div>
+      </div>
+    </div>
+    <div class="about-art reveal">
+      <div class="frame">
+        <svg viewBox="0 0 520 400" role="img" aria-label="演播室装置示意图">
+          <defs>
+            <linearGradient id="ab" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#221f1b"/><stop offset="1" stop-color="#3b342b"/>
+            </linearGradient>
+            <linearGradient id="pg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f6b93b"/><stop offset="1" stop-color="#e8452c"/>
+            </linearGradient>
+          </defs>
+          <rect width="520" height="400" fill="url(#ab)"/>
+          <!-- spotlight -->
+          <path d="M260 0 L430 400 L90 400 Z" fill="#f6b93b" opacity=".08"/>
+          <!-- floor -->
+          <rect y="330" width="520" height="70" fill="#181613"/>
+          <rect y="330" width="520" height="2" fill="#3b342b"/>
+          <!-- big pen holder -->
+          <g transform="translate(200,120)">
+            <path d="M0 0 h120 l-13 206 h-94 z" fill="#2b2722" stroke="#4c453c" stroke-width="3"/>
+            <path d="M0 0 h120 l-3 44 h-114 z" fill="#35302a"/>
+            <g stroke-linecap="round">
+              <line x1="22" y1="0" x2="18" y2="-72" stroke="url(#pg)" stroke-width="9"/>
+              <line x1="42" y1="0" x2="38" y2="-96" stroke="url(#pg)" stroke-width="9"/>
+              <line x1="62" y1="0" x2="58" y2="-64" stroke="url(#pg)" stroke-width="9"/>
+              <line x1="82" y1="0" x2="79" y2="-88" stroke="url(#pg)" stroke-width="9"/>
+              <line x1="100" y1="0" x2="102" y2="-56" stroke="url(#pg)" stroke-width="9"/>
+              <line x1="32" y1="0" x2="29" y2="-42" stroke="#e8452c" stroke-width="8"/>
+              <line x1="72" y1="0" x2="70" y2="-34" stroke="#f6b93b" stroke-width="8"/>
+              <line x1="92" y1="0" x2="95" y2="-24" stroke="#e8452c" stroke-width="8"/>
+            </g>
+            <text x="60" y="140" text-anchor="middle" font-size="12" fill="#7d7669" font-family="monospace" letter-spacing="3">ERRORS</text>
+          </g>
+          <!-- small props -->
+          <g transform="translate(64,250)">
+            <rect width="70" height="74" rx="8" fill="#f7f3ec"/>
+            <rect x="12" y="14" width="46" height="6" rx="3" fill="#d8cec0"/>
+            <rect x="12" y="28" width="34" height="6" rx="3" fill="#d8cec0"/>
+            <rect x="12" y="46" width="26" height="14" rx="4" fill="#e8452c"/>
+          </g>
+          <g transform="translate(386,236)">
+            <rect width="76" height="88" rx="8" fill="#f7f3ec"/>
+            <rect x="12" y="14" width="50" height="6" rx="3" fill="#d8cec0"/>
+            <rect x="12" y="28" width="40" height="6" rx="3" fill="#d8cec0"/>
+            <rect x="12" y="46" width="48" height="6" rx="3" fill="#d8cec0"/>
+            <rect x="12" y="62" width="28" height="14" rx="4" fill="#2f7d6d"/>
+          </g>
+          <!-- camera -->
+          <g transform="translate(430,60)">
+            <rect width="56" height="36" rx="8" fill="#443d34"/>
+            <circle cx="46" cy="18" r="9" fill="#1b1917" stroke="#6b6357" stroke-width="2"/>
+            <rect x="10" y="36" width="10" height="26" fill="#443d34"/>
+            <rect x="36" y="36" width="10" height="26" fill="#443d34"/>
+          </g>
+        </svg>
+      </div>
+      <div class="badge">笔筒<br>是我们的<br>第一件道具</div>
+    </div>
+  </div>
+</section>
+
+<!-- faq -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal" style="justify-content:center;text-align:center;flex-direction:column;align-items:center;">
+      <div class="tag">FAQ</div>
+      <h2>你可能想问的几件事</h2>
+    </div>
+    <div class="faq-list">
+      <div class="qa reveal">
+        <button onclick="toggleQA(this)">节目里的笔筒是真的吗？<i>+</i></button>
+        <div class="ans"><p>是真的。每一期节目结束后，那个纸笔筒会被贴上期数标签，收进我们的道具仓库。目前仓库里已经有 1,240 多个笔筒，这也是我们最舍不得丢的东西。</p></div>
+      </div>
+      <div class="qa reveal">
+        <button onclick="toggleQA(this)">参加节目需要提前准备吗？<i>+</i></button>
+        <div class="ans"><p>不需要。我们刻意不提前公布题目范围，因为节目想记录的是真实反应而不是表演。你唯一需要准备的是接受「可能会错很多次」这件事。</p></div>
+      </div>
+      <div class="qa reveal">
+        <button onclick="toggleQA(this)">错得特别多会被剪掉吗？<i>+</i></button>
+        <div class="ans"><p>不会。我们的剪辑原则是不隐藏任何一次答错。事实上，错得漂亮的片段往往会被放在预告片里。来到这里，请你放心地错。</p></div>
+      </div>
+      <div class="qa reveal">
+        <button onclick="toggleQA(this)">可以投稿自己的视频吗？<i>+</i></button>
+        <div class="ans"><p>当然可以。社区投稿通道常年开放，横向拍摄、画面稳定、音质清晰的片段会被优先选用。入选后会出现在每周三的合辑栏目中，并获得署名。</p></div>
+      </div>
+      <div class="qa reveal">
+        <button onclick="toggleQA(this)">你们接受品牌合作吗？<i>+</i></button>
+        <div class="ans"><p>接受，但有自己的底线：合作内容不得干预答题过程，也不允许提前透露题目。我们更愿意和文具、教育、生活方式类品牌做长期内容合作，而不是单次植入。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="fbrand">
+          <div class="mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 20l7-7"/><path d="M14 4l6 6-3.5 3.5-6-6z"/><path d="M4 20l1.5-4.5L13 8"/>
+            </svg>
+          </div>
+          <div><strong>错一题往里插一支笔</strong><span>PEN PER WRONG</span></div>
+        </div>
+        <p>一档记录失误、也记录勇气的视频节目。每周四更新，社区投稿常年开放。</p>
+      </div>
+      <div>
+        <h4>节目</h4>
+        <ul>
+          <li><a href="#episodes">最新一期</a></li>
+          <li><a href="#episodes">往期回顾</a></li>
+          <li><a href="#formats">栏目介绍</a></li>
+          <li><a href="#community">社区合辑</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于</h4>
+        <ul>
+          <li><a href="#about">品牌故事</a></li>
+          <li><a href="#join">报名参与</a></li>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#contact">商务合作</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>订阅节目更新</h4>
+        <p style="margin-bottom:10px;">留下你的邮箱，每期上线我们会准时告诉你。</p>
+        <form class="newsletter" onsubmit="subscribe(event)">
+          <input type="email" placeholder="你的邮箱地址" required>
+          <button type="submit">订阅</button>
+        </form>
+        <p id="submsg" style="margin-top:12px;color:var(--accent-2);opacity:0;transition:opacity .3s;font-size:12.5px;">已收到，感谢订阅！</p>
+      </div>
+    </div>
+    <div class="fbar">
+      <span>© 2025 错一题往里插一支笔 · 版权所有</span>
+      <div class="socials">
+        <a href="#contact">微博</a>
+        <a href="#contact">B站</a>
+        <a href="#contact">小红书</a>
+        <a href="#contact">抖音</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* FAQ */
+  function toggleQA(btn){
+    var qa = btn.parentElement;
+    var ans = qa.querySelector('.ans');
+    var isOpen = qa.classList.contains('open');
+    document.querySelectorAll('.qa.open').forEach(function(item){
+      item.classList.remove('open');
+      item.querySelector('.ans').style.maxHeight = null;
+    });
+    if(!isOpen){
+      qa.classList.add('open');
+      ans.style.maxHeight = ans.scrollHeight + 'px';
+    }
+  }
+
+  /* reveal on scroll */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  },{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  /* progress bar loop */
+  var bar = document.getElementById('bar');
+  var w = 42;
+  setInterval(function(){
+    w = w >= 100 ? 18 : w + 0.7;
+    if(bar) bar.style.width = w + '%';
+  }, 700);
+
+  /* newsletter */
+  function subscribe(e){
+    e.preventDefault();
+    var msg = document.getElementById('submsg');
+    msg.style.opacity = 1;
+    e.target.reset();
+    setTimeout(function(){ msg.style.opacity = 0; }, 4000);
+  }
+
+  /* marquee duplicate for seamless */
+  (function(){
+    var track = document.getElementById('mtrack');
+    if(track){
+      track.innerHTML = track.innerHTML + track.innerHTML;
+    }
+  })();
+
+  /* smooth anchor close mobile */
+  document.querySelectorAll('#mmenu a').forEach(function(a){
+    a.addEventListener('click', function(){
+      document.getElementById('mmenu').classList.remove('open');
+    });
+  });
+</script>
+</body>
+  </html>
